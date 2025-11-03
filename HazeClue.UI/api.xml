@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HazeClue.UI</name>
+    </assembly>
+    <members>
+        <member name="T:HazeClue.UI.Controllers.v1.CustomControllerBase">
+            <summary>
+            Represents the base API controller for version 1 endpoints.
+            Provides common functionality and configuration for all API controllers in version 1.
+            </summary>
+        </member>
+        <member name="T:HazeClue.UI.Program">
+            <summary>
+            Entry point of the HazeClue Web API application.
+            Responsible for configuring and launching the web host,
+            setting up middleware, and initializing API versioning and Swagger UI.
+            </summary>
+        </member>
+        <member name="M:HazeClue.UI.Program.Main(System.String[])">
+            <summary>
+            Configures the application pipeline and starts the web server.
+            </summary>
+            <param name="args">Command-line arguments passed to the application.</param>
+        </member>
+        <member name="T:HazeClue.UI.StartupExtensions.ConfigureServicesExtension">
+            <summary>
+            Provides extension methods for configuring core application services for the HazeClue Web API.
+            Includes setup for controllers, Swagger documentation, API versioning, and JWT authentication.
+            </summary>
+        </member>
+        <member name="M:HazeClue.UI.StartupExtensions.ConfigureServicesExtension.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Configures the main services required by the HazeClue Web API.
+            This method handles:
+            <list type="bullet">
+            <item><description>Registering controllers with JSON input/output format.</description></item>
+            <item><description>Configuring JWT authentication for secure API access.</description></item>
+            <item><description>Setting up Swagger with XML documentation and JWT security definition.</description></item>
+            <item><description>Enabling API versioning using URL segments and versioned API explorer.</description></item>
+            </list>
+            </summary>
+            <param name="services">The service collection where all application services are registered.</param>
+            <param name="configuration">The application configuration source (e.g., appsettings.json).</param>
+            <returns>The configured <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> instance.</returns>
+        </member>
+    </members>
+</doc>
